@@ -11,10 +11,7 @@ class MealDetailScreen extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: Theme
-            .of(context)
-            .textTheme
-            .title,
+        style: Theme.of(context).textTheme.title,
       ),
     );
   }
@@ -41,10 +38,7 @@ class MealDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mealId = ModalRoute
-        .of(context)
-        .settings
-        .arguments as String;
+    final mealId = ModalRoute.of(context).settings.arguments as String;
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
@@ -65,36 +59,37 @@ class MealDetailScreen extends StatelessWidget {
             buildContainer(
               ListView.builder(
                 itemCount: selectedMeal.ingredients.length,
-                itemBuilder: (ctx, index) =>
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Text(
-                          selectedMeal.ingredients[index],
-                        ),
-                      ),
-                      color: Theme
-                          .of(context)
-                          .accentColor,
+                itemBuilder: (ctx, index) => Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10,
                     ),
+                    child: Text(
+                      selectedMeal.ingredients[index],
+                    ),
+                  ),
+                  color: Theme.of(context).accentColor,
+                ),
               ),
             ),
             buildSelectionTitle(context, 'Steps'),
             buildContainer(
               ListView.builder(
-                itemBuilder: (ctx, index) =>
-                    Column(
-                      children: <Widget>[
-                        ListTile(
-                          leading: CircleAvatar(child: Text('# ${index + 1}'),),
-                          title: Text(selectedMeal.steps[index]),
-                        ),
-                        Divider(height: 2, color: Colors.black38,),
-                      ],
+                itemBuilder: (ctx, index) => Column(
+                  children: <Widget>[
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Text('# ${index + 1}'),
+                      ),
+                      title: Text(selectedMeal.steps[index]),
                     ),
+                    Divider(
+                      height: 2,
+                      color: Colors.black38,
+                    ),
+                  ],
+                ),
                 itemCount: selectedMeal.steps.length,
               ),
             ),
@@ -104,7 +99,11 @@ class MealDetailScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pop(mealId);
-        }, child: Icon(Icons.delete,),),
+        },
+        child: Icon(
+          Icons.delete,
+        ),
+      ),
     );
   }
 }
