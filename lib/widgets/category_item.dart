@@ -24,6 +24,7 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(15),
+        alignment: Alignment.center,
         child: Text(
           title,
           style: Theme.of(context).textTheme.title,
