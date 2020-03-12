@@ -23,6 +23,6 @@ jobs:
     
 #     - name: Release apk
 #       run: flutter build apk --release
-      
-     - name: Flutter Mate
-       uses: Techno-Disaster/Flutter-Mate@v1.0.0
+
+      - name: Flutter CLI
+        uses: steebchen/flutter@v1.0.0
