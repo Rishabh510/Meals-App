@@ -21,5 +21,5 @@ jobs:
     - name: Run tests
       run: pub run test
       
-    - name: Flutter Runner
-      uses: jddeep/Flutter-Runner@1.2.0
+#     - name: Flutter Runner
+#       uses: jddeep/Flutter-Runner@1.2.0
