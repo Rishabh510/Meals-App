@@ -6,23 +6,23 @@ on:
 
 jobs:
   build:
-
+    name: Build app for release
     runs-on: ubuntu-latest
 
-    container:
-      image:  google/dart:latest
+#     container:
+#       image:  google/dart:latest
 
     steps:
-    - uses: actions/checkout@v2
+#     - uses: actions/checkout@v2
       
-    - name: Install dependencies
-      run: flutter pub get
+#     - name: Install dependencies
+#       run: flutter pub get
       
-    - name: Run tests
-      run: pub run test
+#     - name: Run tests
+#       run: pub run test
     
-    - name: Release apk
-      run: flutter build apk --release
+#     - name: Release apk
+#       run: flutter build apk --release
       
-#     - name: Flutter Runner
-#       uses: jddeep/Flutter-Runner@1.2.0
+      - name: Flutter Runner
+        uses: jddeep/Flutter-Runner@1.2.0
