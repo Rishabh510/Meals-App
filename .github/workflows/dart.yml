@@ -47,6 +47,7 @@ jobs:
 
 
     - uses: actions/checkout@master
+    - uses: actions/setup-java@v1
     - name: Flutter Runner
       uses: jddeep/Flutter-Runner@1.2.0
     - name: clean stale build and cache
@@ -61,3 +62,9 @@ jobs:
       uses: ./action
       with:
         args: build apk --release
+
+    - name: Flutter CLI
+      uses: steebchen/flutter@v1.0.0
+      
+    - name: Flutter action
+      uses: subosito/flutter-action@v1.2.0
