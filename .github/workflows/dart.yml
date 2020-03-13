@@ -48,8 +48,9 @@ jobs:
 
     - name: Flutter CLI
       uses: steebchen/flutter@v1.0.0
-      with:
-        args: build apk --release
+#       with:
+#         args: build apk --release
       
     - name: Flutter action
       uses: subosito/flutter-action@v1.2.0
+    - run: flutter build apk --debug --split-per-abi
