@@ -24,5 +24,22 @@ jobs:
 #     - name: Release apk
 #       run: flutter build apk --release
 
-    - name: Flutter action
-      uses: subosito/flutter-action@v1.2.0
+#     - name: Flutter action
+#       uses: subosito/flutter-action@v1.2.0
+
+    - uses: actions/checkout@v2
+
+    - name: install dependencies
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: pub get
+
+    - name: run tests
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: test
+
+    - name: build apk
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: build apk --release
